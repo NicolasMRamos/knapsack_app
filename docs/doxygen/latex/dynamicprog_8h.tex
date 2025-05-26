@@ -1,0 +1,59 @@
+\hypertarget{dynamicprog_8h}{}\doxysection{src/headers/dynamicprog.h File Reference}
+\label{dynamicprog_8h}\index{src/headers/dynamicprog.h@{src/headers/dynamicprog.h}}
+
+
+Header for the dynamic programming algorithm implementation of the 0/1 Knapsack problem.  
+
+
+{\ttfamily \#include \char`\"{}structs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ int, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{dynamicprog_8h_ab34c5a476a2d44d086ced70af2566571}{dp\+Approach}} (const std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using dynamic programming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the dynamic programming algorithm implementation of the 0/1 Knapsack problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dynamicprog_8h_ab34c5a476a2d44d086ced70af2566571}\label{dynamicprog_8h_ab34c5a476a2d44d086ced70af2566571}} 
+\index{dynamicprog.h@{dynamicprog.h}!dpApproach@{dpApproach}}
+\index{dpApproach@{dpApproach}!dynamicprog.h@{dynamicprog.h}}
+\doxysubsubsection{\texorpdfstring{dpApproach()}{dpApproach()}}
+{\footnotesize\ttfamily std\+::pair$<$int, std\+::vector$<$int$>$ $>$ dp\+Approach (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&}]{pallets,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using dynamic programming. 
+
+This function uses a bottom-\/up dynamic programming approach to find the most profitable subset of pallets that can be carried by the truck without exceeding its weight capacity. It builds a DP table to compute the maximum profit for each subproblem and then backtracks to determine the items that were included in the optimal solution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Reference to a vector of {\ttfamily \mbox{\hyperlink{structPallet}{Pallet}}} objects (defined in {\ttfamily \mbox{\hyperlink{structs_8h}{structs.\+h}}}). Each pallet must have {\ttfamily id}, {\ttfamily weight}, and {\ttfamily profit} fields. \\
+\hline
+{\em capacity} & Maximum weight capacity of the truck. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily std\+::pair} where\+:
+\begin{DoxyItemize}
+\item {\ttfamily first} is the total profit of selected pallets.
+\item {\ttfamily second} is a vector of IDs of the selected pallets.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The Dynamic Programming approach is pseudo-\/polynomial, due to the fact that the bigger the input the worse the running time is, because of the table. 
+
+Time complexity\+: O(n $\ast$ W), where {\ttfamily n} is the number of pallets and {\ttfamily W} is the truck capacity. 
+
+Space complexity\+: O(n $\ast$ W) due to the DP table. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{dynamicprog_8cpp}{dynamicprog.\+cpp}} for the implementation. 
+\end{DoxySeeAlso}

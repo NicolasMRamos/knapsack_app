@@ -1,0 +1,45 @@
+\hypertarget{greedy_8cpp}{}\doxysection{src/algorithms/greedy.cpp File Reference}
+\label{greedy_8cpp}\index{src/algorithms/greedy.cpp@{src/algorithms/greedy.cpp}}
+{\ttfamily \#include \char`\"{}greedy.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ int, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{greedy_8cpp_a57e3c97d0afe097239c6adcb19be25e8}{greedy\+Approach}} (std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using a greedy approach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{greedy_8cpp_a57e3c97d0afe097239c6adcb19be25e8}\label{greedy_8cpp_a57e3c97d0afe097239c6adcb19be25e8}} 
+\index{greedy.cpp@{greedy.cpp}!greedyApproach@{greedyApproach}}
+\index{greedyApproach@{greedyApproach}!greedy.cpp@{greedy.cpp}}
+\doxysubsubsection{\texorpdfstring{greedyApproach()}{greedyApproach()}}
+{\footnotesize\ttfamily std\+::pair$<$int, std\+::vector$<$int$>$ $>$ greedy\+Approach (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&}]{pallets,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using a greedy approach. 
+
+The algorithm selects pallets based on their profit-\/to-\/weight ratio, prioritizing items that offer the highest value per unit weight. This provides a suboptimal but efficient solution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Reference to a vector of {\ttfamily \mbox{\hyperlink{structPallet}{Pallet}}} objects (defined in {\ttfamily \mbox{\hyperlink{structs_8h}{structs.\+h}}}). Each pallet must have {\ttfamily id}, {\ttfamily weight}, and {\ttfamily profit} fields. \\
+\hline
+{\em capacity} & Maximum weight capacity of the truck. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily std\+::pair} where\+:
+\begin{DoxyItemize}
+\item {\ttfamily first} is the total profit of selected pallets.
+\item {\ttfamily second} is a vector of IDs of the selected pallets.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(n log n) due to sorting. 
+
+Space complexity\+: O(n) for storing intermediate data. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{greedy_8cpp}{greedy.\+cpp}} for the implementation. 
+\end{DoxySeeAlso}

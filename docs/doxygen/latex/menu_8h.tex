@@ -1,0 +1,144 @@
+\hypertarget{menu_8h}{}\doxysection{src/headers/menu.h File Reference}
+\label{menu_8h}\index{src/headers/menu.h@{src/headers/menu.h}}
+
+
+Declares functions for user interface menus.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}parsing.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}greedy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}backtracking.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dynamicprog.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ilp.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu_8h_a7fe3adb8b69baff33af24e4a3a9c5048}{main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu and prompts the user for a selection. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a01893f403924076a3f97a0c81ce16c86}{approaches}} ()
+\begin{DoxyCompactList}\small\item\em Displays the algorithm selection menu and prompts the user for a choice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a385e27296a95fe021fbdbb7c75a66503}{load\+Dataset}} (int dataset, std\+::string \&filename\+Truck, std\+::string \&filename\+Pallets, std\+::string \&number, std\+::pair$<$ int, int $>$ \&cap\+Pal, std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&pallets, bool \&dataset\+\_\+loaded)
+\begin{DoxyCompactList}\small\item\em Loads the dataset (truck and pallets) from CSV files based on dataset ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a05d1dde1a13fbfc1ff1f09dc78d648c1}{show\+Settings}} (const std\+::string \&number, bool dataset\+\_\+loaded, bool \&approach\+\_\+selected, int approach)
+\begin{DoxyCompactList}\small\item\em Displays the currently loaded dataset and selected algorithm approach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a8d182e48f00188e34bd1587699fe02a3}{run}} (int approach, const std\+::pair$<$ int, int $>$ \&cap\+Pal, std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ pallets, bool approach\+\_\+selected, bool dataset\+\_\+loaded)
+\begin{DoxyCompactList}\small\item\em Runs the selected algorithmic approach on the loaded dataset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares functions for user interface menus. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8h_a01893f403924076a3f97a0c81ce16c86}\label{menu_8h_a01893f403924076a3f97a0c81ce16c86}} 
+\index{menu.h@{menu.h}!approaches@{approaches}}
+\index{approaches@{approaches}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{approaches()}{approaches()}}
+{\footnotesize\ttfamily int approaches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the algorithm selection menu and prompts the user for a choice. 
+
+\begin{DoxyReturn}{Returns}
+The integer corresponding to the chosen algorithm.
+\end{DoxyReturn}
+Options\+:
+\begin{DoxyItemize}
+\item \mbox{[}1\mbox{]} Brute-\/\+Force + Backtracking
+\item \mbox{[}2\mbox{]} Greedy
+\item \mbox{[}3\mbox{]} Dynamic Programming
+\item \mbox{[}4\mbox{]} ILP 
+\end{DoxyItemize}\mbox{\Hypertarget{menu_8h_a385e27296a95fe021fbdbb7c75a66503}\label{menu_8h_a385e27296a95fe021fbdbb7c75a66503}} 
+\index{menu.h@{menu.h}!loadDataset@{loadDataset}}
+\index{loadDataset@{loadDataset}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{loadDataset()}{loadDataset()}}
+{\footnotesize\ttfamily void load\+Dataset (\begin{DoxyParamCaption}\item[{int}]{dataset,  }\item[{std\+::string \&}]{filename\+Truck,  }\item[{std\+::string \&}]{filename\+Pallets,  }\item[{std\+::string \&}]{number,  }\item[{std\+::pair$<$ int, int $>$ \&}]{cap\+Pal,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&}]{pallets,  }\item[{bool \&}]{dataset\+\_\+loaded }\end{DoxyParamCaption})}
+
+
+
+Loads the dataset (truck and pallets) from CSV files based on dataset ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & The dataset ID to load (should be between 1 and 10). \\
+\hline
+{\em filename\+Truck} & Reference to the filename for the truck data. \\
+\hline
+{\em filename\+Pallets} & Reference to the filename for the pallets data. \\
+\hline
+{\em number} & Reference to the formatted dataset number string. \\
+\hline
+{\em cap\+Pal} & Reference to the pair containing truck capacity and pallet count. \\
+\hline
+{\em pallets} & Reference to the vector where parsed pallets will be stored. \\
+\hline
+{\em dataset\+\_\+loaded} & Reference to the flag that will be set to true if dataset is successfully loaded. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8h_a7fe3adb8b69baff33af24e4a3a9c5048}\label{menu_8h_a7fe3adb8b69baff33af24e4a3a9c5048}} 
+\index{menu.h@{menu.h}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the main menu and prompts the user for a selection. 
+
+\begin{DoxyReturn}{Returns}
+The integer corresponding to the user\textquotesingle{}s menu choice.
+\end{DoxyReturn}
+Options\+:
+\begin{DoxyItemize}
+\item \mbox{[}1\mbox{]} Load dataset
+\item \mbox{[}2\mbox{]} Choose algorithmic approach
+\item \mbox{[}3\mbox{]} See loaded settings
+\item \mbox{[}4\mbox{]} Run Program
+\item \mbox{[}5\mbox{]} Exit Program 
+\end{DoxyItemize}\mbox{\Hypertarget{menu_8h_a8d182e48f00188e34bd1587699fe02a3}\label{menu_8h_a8d182e48f00188e34bd1587699fe02a3}} 
+\index{menu.h@{menu.h}!run@{run}}
+\index{run@{run}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}\item[{int}]{approach,  }\item[{const std\+::pair$<$ int, int $>$ \&}]{cap\+Pal,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$}]{pallets,  }\item[{bool}]{approach\+\_\+selected,  }\item[{bool}]{dataset\+\_\+loaded }\end{DoxyParamCaption})}
+
+
+
+Runs the selected algorithmic approach on the loaded dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em approach} & The chosen algorithm approach. \\
+\hline
+{\em cap\+Pal} & Pair containing the truck\textquotesingle{}s capacity and the number of pallets. \\
+\hline
+{\em pallets} & Vector of loaded pallet data. \\
+\hline
+{\em approach\+\_\+selected} & Flag indicating if an approach has been selected. \\
+\hline
+{\em dataset\+\_\+loaded} & Flag indicating if a dataset is loaded. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8h_a05d1dde1a13fbfc1ff1f09dc78d648c1}\label{menu_8h_a05d1dde1a13fbfc1ff1f09dc78d648c1}} 
+\index{menu.h@{menu.h}!showSettings@{showSettings}}
+\index{showSettings@{showSettings}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{showSettings()}{showSettings()}}
+{\footnotesize\ttfamily void show\+Settings (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{number,  }\item[{bool}]{dataset\+\_\+loaded,  }\item[{bool \&}]{approach\+\_\+selected,  }\item[{int}]{approach }\end{DoxyParamCaption})}
+
+
+
+Displays the currently loaded dataset and selected algorithm approach. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The formatted dataset number string. \\
+\hline
+{\em dataset\+\_\+loaded} & Flag indicating if a dataset is loaded. \\
+\hline
+{\em approach\+\_\+selected} & Reference to the flag that is true if an approach has been selected. \\
+\hline
+{\em approach} & The currently selected algorithm approach. \\
+\hline
+\end{DoxyParams}

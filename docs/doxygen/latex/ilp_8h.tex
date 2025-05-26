@@ -1,0 +1,63 @@
+\hypertarget{ilp_8h}{}\doxysection{src/headers/ilp.h File Reference}
+\label{ilp_8h}\index{src/headers/ilp.h@{src/headers/ilp.h}}
+
+
+Header for the ILP algorithm implementation of the 0/1 Knapsack problem.  
+
+
+{\ttfamily \#include \char`\"{}structs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ int, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{ilp_8h_ac47b6b34791d0d66cf851086933c0d10}{ilp\+Approach}} (std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using integer linear programming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the ILP algorithm implementation of the 0/1 Knapsack problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ilp_8h_ac47b6b34791d0d66cf851086933c0d10}\label{ilp_8h_ac47b6b34791d0d66cf851086933c0d10}} 
+\index{ilp.h@{ilp.h}!ilpApproach@{ilpApproach}}
+\index{ilpApproach@{ilpApproach}!ilp.h@{ilp.h}}
+\doxysubsubsection{\texorpdfstring{ilpApproach()}{ilpApproach()}}
+{\footnotesize\ttfamily std\+::pair$<$int, std\+::vector$<$int$>$ $>$ ilp\+Approach (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&}]{pallets,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using integer linear programming. 
+
+This function utilizes a python script that calls an ILP solver for the Knapsack problem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Reference to a vector of {\ttfamily \mbox{\hyperlink{structPallet}{Pallet}}} objects (defined in {\ttfamily \mbox{\hyperlink{structs_8h}{structs.\+h}}}). Each pallet must have {\ttfamily id}, {\ttfamily weight}, and {\ttfamily profit} fields. \\
+\hline
+{\em capacity} & Maximum weight capacity of the truck. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily std\+::pair} where\+:
+\begin{DoxyItemize}
+\item {\ttfamily first} is the total profit of selected pallets.
+\item {\ttfamily second} is a vector of IDs of the selected pallets.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The following complexities refer to the python script. The C++ part of this solution is just handling the I/O files to present the solution. 
+
+Time complexity\+: O(2$^\wedge$n) in the worst case (NP-\/hard), but often much lower in practice due to modern solver heuristics. For small to moderate datasets, the execution time appears nearly constant. For larger datasets, the time increases but still remains manageable, thanks to pruning and optimization techniques. 
+
+Space complexity\+: O(2$^\wedge$n) in the worst case, as solvers may use complex data structures growing with problem size. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ilp_8cpp}{ilp.\+cpp}} for the implementation of the C++ file handler. 
+
+\mbox{\hyperlink{knapsack__solver_8py}{knapsack\+\_\+solver.\+py}} for the python script. 
+\end{DoxySeeAlso}

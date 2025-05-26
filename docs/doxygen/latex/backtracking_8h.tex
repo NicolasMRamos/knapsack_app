@@ -1,0 +1,58 @@
+\hypertarget{backtracking_8h}{}\doxysection{src/headers/backtracking.h File Reference}
+\label{backtracking_8h}\index{src/headers/backtracking.h@{src/headers/backtracking.h}}
+
+
+Header for the backtracking algorithm implementation of the 0/1 Knapsack problem.  
+
+
+{\ttfamily \#include \char`\"{}structs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ int, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{backtracking_8h_aafab9f93243a31693a9d2ae7008c454f}{backtracking\+Approach}} (const std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 Knapsack problem using a backtracking approach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header for the backtracking algorithm implementation of the 0/1 Knapsack problem. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{backtracking_8h_aafab9f93243a31693a9d2ae7008c454f}\label{backtracking_8h_aafab9f93243a31693a9d2ae7008c454f}} 
+\index{backtracking.h@{backtracking.h}!backtrackingApproach@{backtrackingApproach}}
+\index{backtrackingApproach@{backtrackingApproach}!backtracking.h@{backtracking.h}}
+\doxysubsubsection{\texorpdfstring{backtrackingApproach()}{backtrackingApproach()}}
+{\footnotesize\ttfamily std\+::pair$<$int, std\+::vector$<$int$>$ $>$ backtracking\+Approach (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \&}]{pallets,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 Knapsack problem using a backtracking approach. 
+
+The algorithm tries various combinations (as a decision tree), pruning impossible branches and choosing the best.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Reference to a vector of {\ttfamily \mbox{\hyperlink{structPallet}{Pallet}}} objects (defined in {\ttfamily \mbox{\hyperlink{structs_8h}{structs.\+h}}}). Each pallet must have {\ttfamily id}, {\ttfamily weight}, and {\ttfamily profit} fields. \\
+\hline
+{\em capacity} & Maximum weight capacity of the truck. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily std\+::pair} where\+:
+\begin{DoxyItemize}
+\item {\ttfamily first} is the total profit of selected pallets.
+\item {\ttfamily second} is a vector of IDs of the selected pallets.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(2$^\wedge$n), in the worst case, tries all combinations. 
+
+Space complexity\+: O(n$^\wedge$2) due to recursion depth and copying of state vectors. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{backtracking_8cpp}{backtracking.\+cpp}} for the implementation. 
+\end{DoxySeeAlso}

@@ -1,0 +1,66 @@
+\hypertarget{parsing_8h}{}\doxysection{src/headers/parsing.h File Reference}
+\label{parsing_8h}\index{src/headers/parsing.h@{src/headers/parsing.h}}
+
+
+Declares functions for parsing pallet and truck data from files.  
+
+
+{\ttfamily \#include \char`\"{}structs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structPallet}{Pallet}} $>$ \mbox{\hyperlink{parsing_8h_a7a873ff547f137a4517e4e83d02d45a9}{parse\+Pallets}} (const std\+::string \&file, int n\+\_\+pallets)
+\begin{DoxyCompactList}\small\item\em Parses a list of pallets from a CSV file. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{parsing_8h_a8409b53f2971d53b05949e0e5dd7a0e3}{parse\+Truck}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Parses truck information from a CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares functions for parsing pallet and truck data from files. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parsing_8h_a7a873ff547f137a4517e4e83d02d45a9}\label{parsing_8h_a7a873ff547f137a4517e4e83d02d45a9}} 
+\index{parsing.h@{parsing.h}!parsePallets@{parsePallets}}
+\index{parsePallets@{parsePallets}!parsing.h@{parsing.h}}
+\doxysubsubsection{\texorpdfstring{parsePallets()}{parsePallets()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structPallet}{Pallet}}$>$ parse\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{int}]{n\+\_\+pallets }\end{DoxyParamCaption})}
+
+
+
+Parses a list of pallets from a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The path to the CSV file containing pallet data. \\
+\hline
+{\em n\+\_\+pallets} & The number of pallets expected in the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \mbox{\hyperlink{structPallet}{Pallet}} objects parsed from the file.
+\end{DoxyReturn}
+The CSV format should have rows with the format\+: id,weight,profit \mbox{\Hypertarget{parsing_8h_a8409b53f2971d53b05949e0e5dd7a0e3}\label{parsing_8h_a8409b53f2971d53b05949e0e5dd7a0e3}} 
+\index{parsing.h@{parsing.h}!parseTruck@{parseTruck}}
+\index{parseTruck@{parseTruck}!parsing.h@{parsing.h}}
+\doxysubsubsection{\texorpdfstring{parseTruck()}{parseTruck()}}
+{\footnotesize\ttfamily std\+::pair$<$int, int$>$ parse\+Truck (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Parses truck information from a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The path to the CSV file containing truck data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair where the first element is the truck capacity and the second is the number of pallets.
+\end{DoxyReturn}
+The CSV format should have the second line in the format\+: capacity,n\+\_\+pallets 

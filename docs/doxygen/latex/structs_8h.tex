@@ -1,0 +1,48 @@
+\hypertarget{structs_8h}{}\doxysection{src/headers/structs.h File Reference}
+\label{structs_8h}\index{src/headers/structs.h@{src/headers/structs.h}}
+
+
+Contains data structures for representing pallets and trucks.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPallet}{Pallet}}
+\begin{DoxyCompactList}\small\item\em Represents a pallet with an identifier, weight, and associated profit. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTruck}{Truck}}
+\begin{DoxyCompactList}\small\item\em Represents a truck with a given capacity and a list of pallets it carries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structs_8h_a673d63f5e4f3b3b5e99eff67363b8dec}{operator$<$}} (const \mbox{\hyperlink{structPallet}{Pallet}} \&lhs, const \mbox{\hyperlink{structPallet}{Pallet}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Comparison operator for sorting pallets by weight. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains data structures for representing pallets and trucks. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{structs_8h_a673d63f5e4f3b3b5e99eff67363b8dec}\label{structs_8h_a673d63f5e4f3b3b5e99eff67363b8dec}} 
+\index{structs.h@{structs.h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!structs.h@{structs.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPallet}{Pallet}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{structPallet}{Pallet}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Comparison operator for sorting pallets by weight. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & Left-\/hand side pallet. \\
+\hline
+{\em rhs} & Right-\/hand side pallet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if lhs has smaller weight than rhs, false otherwise. 
+\end{DoxyReturn}
