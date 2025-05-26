@@ -1,10 +1,12 @@
 # University Project - 0/1 Knapsack App
 
-## Description
-
 This group project consists on an "app" I developed for the *Desenho de Algoritmos* (DA) class in my second year, second semester in FEUP.
 
+## Description
+
 This app solves the "0/1 Knapsack Problem" applied to a real life situation (loading and selection of pallets for a truck), with support for 4 different algorithmic approaches.
+
+## Features
 
 It includes:
 
